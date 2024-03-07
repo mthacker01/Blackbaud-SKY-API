@@ -26,21 +26,13 @@ def retrieve_json_from_s3(bucket_name, json_file_name):
     """
     # Create a session using your AWS credentials
     session = boto3.Session(
-        aws_access_key_id="AKIAQ3EGTT63PDFGOWGC",
-        aws_secret_access_key="M56KSoFBpHLG16P2dds1ap6pKxRBqZXDvuX4sWNZ",
-        region_name="us-east-1"
+        aws_access_key_id="access id",
+        aws_secret_access_key="access id",
+        region_name="region"
     )
     # Create an S3 client
     s3 = session.client("s3")
 
-    session = boto3.Session(
-        aws_access_key_id="AKIAQ3EGTT63PDFGOWGC",
-        aws_secret_access_key="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",
-        region_name="us-east-1"
-    )
-
-    # Create an S3 client
-    s3 = session.client("s3")
 
     # Retrieve JSON file content from S3
     file_content = s3.get_object(Bucket=bucket_name, Key=json_file_name)['Body'].read().decode('utf-8')
@@ -57,8 +49,8 @@ user_id = [ index['id'] for index in results ]
 
 
 # Replace the following values with your actual API credentials
-client_id = '7b1f9c28-90d9-49ee-a3a4-12c3db01ded5'
-client_secret = 'f2NII6IiHbghiB2ssxZ/q+mswVLjksAmSlrjMvUQbsE=' #OAuth Client Secret
+client_id = 'client_id' #OAuth Client ID
+client_secret = 'client_secret' #OAuth Client Secret
 redirect_uri = 'https://www.matt-thacker.com/redirect'
 scope = 'Full'
 
@@ -116,7 +108,7 @@ def get_constituent_code_by_id(constituent_id):
     # Define the headers
     headers = {
         "Authorization": f"Bearer {access_token}",
-        "Bb-Api-Subscription-Key": '2ea374f2e6234d8a9cd2ed724587fe31',
+        "Bb-Api-Subscription-Key": 'api-key',
         "Content-Type": "application/json"
     }
 
