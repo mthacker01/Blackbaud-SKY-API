@@ -98,7 +98,7 @@ Next, extract the `id` from each item and store into a new list.
 user_id = [ index['id'] for index in results ]
 ```
 
-This will return the following: \n 
+This will return the following: 
 
 ['642507', '642508', '642509', '618885', '618886', '618887', '618888', '618889', '618890', '618891', '618892', '618893', '618992', '618993', '618994', '618995', '618996', '618997', '618998', '618999', '619000', '628940', '628941', '628942', '628943', '628944', '628945', '628946', '628947', '628948', '628949', '628950', '628951', '628952', '628953', '628954', '628955', '628956', '628957', '628958', '628959', '628960', '628961', '628962', '628963', '628964', '628965', '628966', '628967', '628968', '628969', '628970', '628971', '628972', '628973', '628974', '628975']
 
@@ -126,7 +126,6 @@ params = {
 url = f'{authorization_url}?{urlencode(params)}'
 
 print(f'Please visit the following URL to authorize the application:\n{url}')
-
 ```
 
 After visiting the URL and authorizing the application, the user will be redirected to the `redirect_uri` with a `code` parameter in the URL. This code is used to obtain an access token. 
@@ -213,11 +212,7 @@ df_constituents = pd.DataFrame(results)
 ```
 ![img_1.png](img_1.png)
 
-
-```python
-
 ### Clean the list of Constituent Codes to flatten the data using pandas
-
 ```python
 df_constitiuent_codes = pd.DataFrame(constituent_codes_clean, columns=['constituent_codes1', 'constituent_codes2'])
 
